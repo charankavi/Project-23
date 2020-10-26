@@ -43,9 +43,9 @@ function setup() {
 
 	Engine.run(engine);
   
-	part1 = new Parts(150,350,10,100,"red");
-	part2 = new Parts(350,350,10,100,"red");
-	part3 = new Parts(200,400,200,10,"red");
+	part1 = new Parts(150,350,10,100);
+	part2 = new Parts(350,350,10,100);
+	part3 = new Parts(200,400,200,10);
 
 
 
@@ -69,6 +69,3 @@ function keyPressed() {
 
 	}
 }
-
-
-

@@ -1,5 +1,5 @@
 class Parts { 
-    constructor(x,y,width,height,fill){
+    constructor(x,y,width,height){
     
     var options = {
         isStatic: true 
@@ -13,7 +13,7 @@ class Parts {
     display(){
         var pos = this.body.position;
         rectMode(CENTER);
-        fill("red")
+        fill(rgb(255,0,0))
         rect(pos.x,pos.y,this.width,this.height);
     }
     }
