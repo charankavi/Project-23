@@ -1,6 +1,7 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground;
 var part1,part2,part3;
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -47,8 +48,6 @@ function setup() {
 	part2 = new Parts(350,350,10,100);
 	part3 = new Parts(200,400,200,10);
 
-
-
 }
 
 
@@ -57,6 +56,12 @@ function draw() {
   background(0);
   packageSprite.x = packageBody.position.x 
   packageSprite.y = packageBody.position.y 
+
+  part1.display();
+  part2.display(); 
+  part3.display();
+
+packageSprite.x = helicopterSprite.x;
 
   drawSprites();
  
@@ -68,4 +73,12 @@ function keyPressed() {
 	Matter.Body.setStatic(packageBody,false)
 
 	}
+	if (keyCode === RIGHT_ARROW) {
+		// Look at the hints in the document and understand how to make the package body fall only on
+		helicopterSprite.x = helicopterSprite.x + 1;
+		}
+	if (keyCode === LEFT_ARROW) {
+		// Look at the hints in the document and understand how to make the package body fall only on
+		helicopterSprite.x = helicopterSprite.x - 1;
+		}		
 }
