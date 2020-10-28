@@ -44,9 +44,9 @@ function setup() {
 
 	Engine.run(engine);
   
-	part1 = new Parts(150,350,10,100);
-	part2 = new Parts(350,350,10,100);
-	part3 = new Parts(200,400,200,10);
+	part1 = new Parts(300,610,10,100);
+	part2 = new Parts(500,610,10,100);
+	part3 = new Parts(400,660,200,10);
 
 }
 
@@ -61,7 +61,18 @@ function draw() {
   part2.display(); 
   part3.display();
 
+
 packageSprite.x = helicopterSprite.x;
+
+
+if (keyDown("RIGHT_ARROW")) {
+	// Look at the hints in the document and understand how to make the package body fall only on
+	helicopterSprite.x = helicopterSprite.x + 3;
+	}
+if (keyDown("LEFT_ARROW")) {
+	// Look at the hints in the document and understand how to make the package body fall only on
+	helicopterSprite.x = helicopterSprite.x - 3;
+	}
 
   drawSprites();
  
@@ -73,12 +84,5 @@ function keyPressed() {
 	Matter.Body.setStatic(packageBody,false)
 
 	}
-	if (keyCode === RIGHT_ARROW) {
-		// Look at the hints in the document and understand how to make the package body fall only on
-		helicopterSprite.x = helicopterSprite.x + 1;
-		}
-	if (keyCode === LEFT_ARROW) {
-		// Look at the hints in the document and understand how to make the package body fall only on
-		helicopterSprite.x = helicopterSprite.x - 1;
-		}		
+		
 }
